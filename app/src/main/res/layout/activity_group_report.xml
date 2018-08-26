@@ -38,7 +38,7 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:elevation="10dp"
             android:layout_margin="5dp"
@@ -50,28 +50,28 @@
                 android:orientation="vertical"
 
                 >
-            <ImageView
-                android:src="@drawable/team"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                />
-            <TextView
-                android:gravity="center"
-                android:padding="20dp"
-                android:layout_weight="1"
-                android:id="@+id/totalCount"
-                android:layout_below="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:fontFamily="sans-serif-thin"/>
+                <ImageView
+                    android:src="@drawable/team"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_weight="1"
+                    android:id="@+id/totalCount"
+                    android:layout_below="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:fontFamily="sans-serif-thin"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:elevation="10dp"
             android:layout_margin="5dp">

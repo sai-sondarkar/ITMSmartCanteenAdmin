@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.HomeActivity" />
-        <activity android:name=".Activities.DayReport"></activity>
+        <activity android:name=".Activities.DayReport" />
+        <activity android:name=".Activities.GroupReport"></activity>
     </application>
 
 </manifest>

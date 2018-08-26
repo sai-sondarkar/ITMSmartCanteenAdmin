@@ -24,8 +24,7 @@ import edu.itm.smartcanteenadmin.FirebaseExtra.FirebaseInit;
 import edu.itm.smartcanteenadmin.Models.CanteenServiceModel;
 import edu.itm.smartcanteenadmin.R;
 
-public class DayReport extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener  {
-
+public class GroupReport extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener {
 
     long startTime, endTime;
     private List<CanteenServiceModel> canteenServiceModelList = new ArrayList<>();
@@ -38,8 +37,7 @@ public class DayReport extends AppCompatActivity implements  DatePickerDialog.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_day_report);
-
+        setContentView(R.layout.activity_group_report);
         initUiElements();
         initCalender();
 
@@ -62,10 +60,25 @@ public class DayReport extends AppCompatActivity implements  DatePickerDialog.On
         Calendar now = Calendar.getInstance();
 
         DatePickerDialog date = new DatePickerDialog.Builder(
-                DayReport.this,
+                GroupReport.this,
                 now.get(Calendar.YEAR),
                 now.get(Calendar.MONTH),
                 now.get(Calendar.DAY_OF_MONTH))
+                .build();
+
+        date.show(getSupportFragmentManager(),"sai");
+
+    }
+
+    public void endCalender(){
+        Calendar now = Calendar.getInstance();
+
+        DatePickerDialog date = new DatePickerDialog.Builder(
+                GroupReport.this,
+                now.get(Calendar.YEAR),
+                now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH))
+
                 .build();
 
         date.show(getSupportFragmentManager(),"sai");
