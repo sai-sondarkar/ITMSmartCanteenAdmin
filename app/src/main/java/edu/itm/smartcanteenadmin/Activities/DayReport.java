@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.philliphsu.bottomsheetpickers.date.DatePickerDialog;
 
 import java.util.Calendar;
@@ -71,7 +74,32 @@ public class DayReport extends AppCompatActivity implements  DatePickerDialog.On
 
 
     public void getDataFromFirebase(){
-        FirebaseInit.getDatabase().getReference().child("CanteenData").
+        FirebaseInit.getDatabase().getReference().child("CanteenData").orderByChild("timeStamp").startAt(startTime).endAt(endTime).addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
     }
 }
