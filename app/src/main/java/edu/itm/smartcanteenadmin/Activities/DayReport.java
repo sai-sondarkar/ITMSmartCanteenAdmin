@@ -3,21 +3,26 @@ package edu.itm.smartcanteenadmin.Activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.philliphsu.bottomsheetpickers.date.DatePickerDialog;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import edu.itm.smartcanteenadmin.FirebaseExtra.FirebaseInit;
+import edu.itm.smartcanteenadmin.Models.CanteenServiceModel;
 import edu.itm.smartcanteenadmin.R;
 
 public class DayReport extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener  {
 
 
     long startTime, endTime;
+    List<CanteenServiceModel> canteenServiceModelList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +75,8 @@ public class DayReport extends AppCompatActivity implements  DatePickerDialog.On
         endTime = cal.getTimeInMillis();
         Log.d("time2",endTime+"");
 
+        getDataFromFirebase();
+
     }
 
 
@@ -77,6 +84,12 @@ public class DayReport extends AppCompatActivity implements  DatePickerDialog.On
         FirebaseInit.getDatabase().getReference().child("CanteenData").orderByChild("timeStamp").startAt(startTime).endAt(endTime).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                CanteenServiceModel canteenServiceModel = dataSnapshot.getValue(CanteenServiceModel.class);
+                canteenServiceModelList.add(canteenServiceModel);
+
+                Toast.makeText(getApplicationContext(),""+canteenServiceModel.getStudentName(),Toast.LENGTH_SHORT).show();
+
+                Log.d("data", canteenServiceModel.getRollNumber() + canteenServiceModel.getStudentName() + canteenServiceModel.getTimeStamp());
 
             }
 
@@ -100,6 +113,7 @@ public class DayReport extends AppCompatActivity implements  DatePickerDialog.On
 
             }
         });
+
 
     }
 }
