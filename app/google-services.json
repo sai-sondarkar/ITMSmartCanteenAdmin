@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "51278047477",
+    "firebase_url": "https://itmsmartcanteen.firebaseio.com",
+    "project_id": "itmsmartcanteen",
+    "storage_bucket": "itmsmartcanteen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51278047477:android:1c9f7b4c73862dd0",
+        "android_client_info": {
+          "package_name": "edu.itm.itmsmartcanteen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51278047477-32i2vt51fm3o36g86d24ne3d7g6io44q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.itm.itmsmartcanteen",
+            "certificate_hash": "973b05a8103904b1ef621ca8a223ef7ecf322905"
+          }
+        },
+        {
+          "client_id": "51278047477-0lh02kk7bgcdaj53iubpi2vtptlf13k4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.itm.itmsmartcanteen",
+            "certificate_hash": "03e2c7c942ccdfd10ef6a4972ede5586369987e5"
+          }
+        },
+        {
+          "client_id": "51278047477-7epigdivv9kechfnv9gg4n45366upbso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByAj_XoTF34IEM9Nh78VvjbtAKvFndQdo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51278047477-7epigdivv9kechfnv9gg4n45366upbso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51278047477:android:c8680350037162d8",
+        "android_client_info": {
+          "package_name": "edu.itm.smartcanteenadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51278047477-rn5rq3vgrqgagh7gphu89h1vpdaem5sf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.itm.smartcanteenadmin",
+            "certificate_hash": "03e2c7c942ccdfd10ef6a4972ede5586369987e5"
+          }
+        },
+        {
+          "client_id": "51278047477-7epigdivv9kechfnv9gg4n45366upbso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByAj_XoTF34IEM9Nh78VvjbtAKvFndQdo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51278047477-7epigdivv9kechfnv9gg4n45366upbso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

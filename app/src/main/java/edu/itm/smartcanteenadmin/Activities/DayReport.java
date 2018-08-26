@@ -1,0 +1,77 @@
+package edu.itm.smartcanteenadmin.Activities;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+
+import com.philliphsu.bottomsheetpickers.date.DatePickerDialog;
+
+import java.util.Calendar;
+
+import edu.itm.smartcanteenadmin.FirebaseExtra.FirebaseInit;
+import edu.itm.smartcanteenadmin.R;
+
+public class DayReport extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener  {
+
+
+    long startTime, endTime;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_day_report);
+
+        initCalender();
+
+
+
+
+
+    }
+
+    public void initCalender(){
+        Calendar now = Calendar.getInstance();
+
+        DatePickerDialog date = new DatePickerDialog.Builder(
+                DayReport.this,
+                now.get(Calendar.YEAR),
+                now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH))
+                /* ... Set additional options ... */
+                .build();
+
+        date.show(getSupportFragmentManager(),"sai");
+    }
+
+    @Override
+    public void onDateSet(DatePickerDialog dialog, int year, int monthOfYear, int dayOfMonth) {
+
+        Calendar cal = new java.util.GregorianCalendar();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, monthOfYear);
+        cal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+        cal.set(Calendar.HOUR,00);
+        cal.set(Calendar.MINUTE,00);
+        cal.set(Calendar.SECOND,00);
+        cal.set(Calendar.MILLISECOND,1);
+
+        startTime = cal.getTimeInMillis();
+        Log.d("time1",startTime+"");
+
+        cal.set(Calendar.HOUR,23);
+        cal.set(Calendar.MINUTE,59);
+        cal.set(Calendar.SECOND,59);
+        cal.set(Calendar.MILLISECOND,999);
+
+        endTime = cal.getTimeInMillis();
+        Log.d("time2",endTime+"");
+
+    }
+
+
+    public void getDataFromFirebase(){
+        FirebaseInit.getDatabase().getReference().child("CanteenData").
+
+    }
+}
